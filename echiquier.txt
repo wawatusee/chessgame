@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link href="css/plateaudejeu.css" rel="stylesheet" type="text/css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script type="application/javascript">
+    
+
+    function createColorArray(numberOfColors) {
+        var couleurs=[];
+        var aElmtHexa=["0","1","2","3","4","5","6","7","8","9","a","b","c","d","e","f"];
+        
+        for (let i = 0; i < numberOfColors; i++) {
+            var sValCouleur="#";
+            while(sValCouleur.length<=6){
+                sValCouleur=sValCouleur + aElmtHexa[ Math.floor(Math.random() * Math.floor(15))];
+            }
+            couleurs.push(sValCouleur);
+        }
+
+        return couleurs;
+    }
+
+    function draw() {
+            var ArrayCanevas = document.querySelectorAll('.canvas');
+            for (canevas of ArrayCanevas) {
+                if (canevas.getContext) {
+                var ctx = canevas.getContext('2d');
+                var base;
+                var nbrTeams=6;
+                var nbrMatieres=6;
+                var hauteurDeCase=30;
+                var couleur = createColorArray(nbrMatieres);
+                for (i=0;i<nbrMatieres;i++)
+                {
+                    var a=[250,0];
+                    var rayon1parPi=(i*hauteurDeCase)*Math.PI;
+                    var rayon2parPi=((i+1)*hauteurDeCase)*Math.PI;
+                    //Pour faire un écart entre 2 pavés nous enlevons 5 au rayon
+                    var base=a[1]-5+((i+1)*hauteurDeCase);
+                    ctx.beginPath();
+                    ctx.moveTo(a[0]-(rayon1parPi)/nbrTeams, a[1]+(i*hauteurDeCase));
+                    ctx.lineTo(a[0]-(rayon1parPi)/nbrTeams, a[1]+(i*hauteurDeCase));
+                    ctx.lineTo(a[0]+(rayon1parPi)/nbrTeams, a[1]+(i*hauteurDeCase));
+                    ctx.lineTo(a[0]+(rayon2parPi)/nbrTeams, base);
+                    ctx.lineTo(a[0]-(rayon2parPi)/nbrTeams, base);
+                    ctx.fillStyle = couleur[i];
+                    ctx.closePath();
+                    ctx.stroke();
+                    ctx.fill(); 
+                }
+            }
+
+        }
+           
+    }
+    </script>
+</head>
+<body onload="draw();">
+    <div class="chemindejeu">
+         <canvas class="canvas" width="500px" height="500"></canvas>
+    </div>
+</body>
+</html>
