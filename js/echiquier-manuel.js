@@ -4,7 +4,7 @@ function miseEnPlacePieces() {
 
 function changeDePiece(place = "A1", pieceFinale = "Reine Blanche") {
     var emplacement = document.getElementById(place);
-    emplacement.style.backgroundColor = "black";
-    emplacement.style.backgroundImage.position.x = "128 px";
+    emplacement.style.backgroundColor = "yellow";
+    emplacement.style.backgroundPosition = "1px 0";
     alert(`${pieceFinale} en ${place}`);
 }
