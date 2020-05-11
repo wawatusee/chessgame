@@ -1,18 +1,18 @@
 function miseEnPlacePieces() {
-    changeDePiece("C4", 4, "w");
+    changeDePiece("D4", 5, "b");
 };
 
 function changeDePiece(place = "B3", figure, couleur) {
-    var aCouleur = ["-32px", "0px", "blanc", "noir"];
-    var couleurJouee = aCouleur[(couleur === "w" ? 0 : 1)];
+    var aCouleur = ["-32px", "0px", "-64px"];
+    var couleurJouee = aCouleur[(couleur === "b" ? 0 : couleur === "n" ? 1 : 2)];
     var pieces = [
-        ["tour blanche", "0px", "-32px"],
-        ["cavalier blanc", "192px", "-32px"],
-        ["fou blanc", "160px", "-32px"],
-        ["dame blanche", "128px", "-32px"],
-        ["roi blanc", "160px", "-32px"],
-        ["pion blanc", "160px", "-32px"],
-        ["vide", "0px", "-64px"],
+        ["tour ", "0px"],
+        ["cavalier ", "192px"],
+        ["fou ", "160px"],
+        ["dame ", "128px"],
+        ["roi ", "160px"],
+        ["pion ", "64px"],
+        ["vide", "0px"],
     ];
     var emplacement = document.getElementById(place);
     emplacement.style.backgroundPosition = `${pieces[figure][1]} ${couleurJouee}`;

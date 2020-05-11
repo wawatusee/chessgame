@@ -2,24 +2,9 @@
 <html>
 
 <head>
-    <title>||ligne-echiquier||</title>
+    <title>||echiquier-auto||</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script type="application/javascript">
-        function addLine() {
-            // crée un nouvel élément div
-            var newline = document.createElement("ul");
-            // et lui donne un peu de contenu
-            var newContent = document.createTextNode('Et ici une ligne qui contiendra mes cases');
-            // ajoute le nœud texte au nouveau ul créé
-            newline.appendChild(newContent);
-            newline.id = "ligne";
-            newline.style.position = "relative";
-            newline.style.backgroundColor = "green";
-            // ajoute le nouvel élément créé et son contenu dans le DOM
-            var chessBoard = document.getElementById('plateau');
-            document.body.appendChild(newline, chessBoard);
-        }
-    </script>
+    <script type="application/javascript" src="js/ligne-echiquier-createelement.js"></script>
 </head>
 
 <body onload="addLine()">

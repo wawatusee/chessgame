@@ -2,351 +2,17 @@
 <html>
 
 <head>
-    <style>
-        #echiquier {
-            max-width: 320px;
-        }
-        
-        .line div {
-            float: left;
-            height: 32px;
-            width: 32px;
-        }
-        
-        .bordure {
-            text-align: center;
-            color: white;
-            background-color: black;
-        }
-        
-        #A1 {
-            background: url('chess-pieces.png')0px -32px;
-            background-color: brown;
-        }
-        
-        #B1 {
-            background: url('chess-pieces.png')192px -32px;
-            background-color: yellowgreen;
-        }
-        
-        #C1 {
-            background: url('chess-pieces.png')160px -32px;
-            background-color: brown;
-        }
-        
-        #D1 {
-            background: url('chess-pieces.png')128px -32px;
-            background-color: yellowgreen;
-        }
-        
-        #E1 {
-            background: url('chess-pieces.png')96px -32px;
-            background-color: brown;
-        }
-        
-        #F1 {
-            background: url('chess-pieces.png')160px -32px;
-            background-color: yellowgreen;
-        }
-        
-        #G1 {
-            background: url('chess-pieces.png')192px -32px;
-            background-color: brown;
-        }
-        
-        #H1 {
-            background: url('chess-pieces.png')0px -32px;
-            background-color: yellowgreen;
-        }
-        
-        #A2 {
-            background: url('chess-pieces.png')64px -32px;
-            background-color: yellowgreen;
-            ;
-        }
-        
-        #B2 {
-            background: url('chess-pieces.png')64px -32px;
-            background-color: brown;
-        }
-        
-        #C2 {
-            background: url('chess-pieces.png')64px -32px;
-            background-color: yellowgreen;
-        }
-        
-        #D2 {
-            background: url('chess-pieces.png')64px -32px;
-            background-color: brown;
-        }
-        
-        #E2 {
-            background: url('chess-pieces.png')64px -32px;
-            background-color: yellowgreen;
-        }
-        
-        #F2 {
-            background: url('chess-pieces.png')64px -32px;
-            background-color: brown;
-        }
-        
-        #G2 {
-            background: url('chess-pieces.png')64px -32px;
-            background-color: yellowgreen;
-            ;
-        }
-        
-        #H2 {
-            background: url('chess-pieces.png')64px -32px;
-            background-color: brown;
-        }
-        
-        #A3 {
-            background: url('chess-pieces.png')0 -64px;
-            background-color: brown;
-        }
-        
-        #B3 {
-            background: url('chess-pieces.png')0 -64px;
-            background-color: yellowgreen;
-        }
-        
-        #C3 {
-            background: url('chess-pieces.png')0 -64px;
-            background-color: brown;
-        }
-        
-        #D3 {
-            background: url('chess-pieces.png')0 -64px;
-            background-color: yellowgreen;
-        }
-        
-        #E3 {
-            background: url('chess-pieces.png')0 -64px;
-            background-color: brown;
-        }
-        
-        #F3 {
-            background: url('chess-pieces.png')0 -64px;
-            background-color: yellowgreen;
-        }
-        
-        #G3 {
-            background: url('chess-pieces.png')0 -64px;
-            background-color: brown;
-        }
-        
-        #H3 {
-            background: url('chess-pieces.png')0 -64px;
-            background-color: yellowgreen;
-        }
-        
-        #A4 {
-            background: url('chess-pieces.png')0 -64px;
-            background-color: yellowgreen;
-        }
-        
-        #B4 {
-            background: url('chess-pieces.png')0 -64px;
-            background-color: brown;
-        }
-        
-        #C4 {
-            background: url('chess-pieces.png')0 -64px;
-            background-color: yellowgreen;
-        }
-        
-        #D4 {
-            background: url('chess-pieces.png')0 -64px;
-            background-color: brown;
-        }
-        
-        #E4 {
-            background: url('chess-pieces.png')0 -64px;
-            background-color: yellowgreen;
-        }
-        
-        #F4 {
-            background: url('chess-pieces.png')0 -64px;
-            background-color: brown;
-        }
-        
-        #G4 {
-            background: url('chess-pieces.png')0 -64px;
-            background-color: yellowgreen;
-        }
-        
-        #H4 {
-            background: url('chess-pieces.png')0 -64px;
-            background-color: brown;
-        }
-        
-        #A5 {
-            background: url('chess-pieces.png')0 -64px;
-            background-color: brown;
-        }
-        
-        #B5 {
-            background: url('chess-pieces.png')0 -64px;
-            background-color: yellowgreen;
-        }
-        
-        #C5 {
-            background: url('chess-pieces.png')0 -64px;
-            background-color: brown;
-        }
-        
-        #D5 {
-            background: url('chess-pieces.png')0 -64px;
-            background-color: yellowgreen;
-        }
-        
-        #E5 {
-            background: url('chess-pieces.png')0 -64px;
-            background-color: brown;
-        }
-        
-        #F5 {
-            background: url('chess-pieces.png')0 -64px;
-            background-color: yellowgreen;
-        }
-        
-        #G5 {
-            background: url('chess-pieces.png')0 -64px;
-            background-color: brown;
-        }
-        
-        #H5 {
-            background: url('chess-pieces.png')0 -64px;
-            background-color: yellowgreen;
-        }
-        
-        #A6 {
-            background: url('chess-pieces.png')0 -64px;
-            background-color: yellowgreen;
-        }
-        
-        #B6 {
-            background: url('chess-pieces.png')0 -64px;
-            background-color: brown;
-        }
-        
-        #C6 {
-            background: url('chess-pieces.png')0 -64px;
-            background-color: yellowgreen;
-        }
-        
-        #D6 {
-            background: url('chess-pieces.png')0 -64px;
-            background-color: brown;
-        }
-        
-        #E6 {
-            background: url('chess-pieces.png')0 -64px;
-            background-color: yellowgreen;
-        }
-        
-        #F6 {
-            background: url('chess-pieces.png')0 -64px;
-            background-color: brown;
-        }
-        
-        #G6 {
-            background: url('chess-pieces.png')0 -64px;
-            background-color: yellowgreen;
-        }
-        
-        #H6 {
-            background: url('chess-pieces.png')0 -64px;
-            background-color: brown;
-        }
-        
-        #A7 {
-            background: url('chess-pieces.png')64px 0;
-            background-color: brown;
-        }
-        
-        #B7 {
-            background: url('chess-pieces.png')64px 0;
-            background-color: yellowgreen;
-        }
-        
-        #C7 {
-            background: url('chess-pieces.png')64px 0;
-            background-color: brown;
-        }
-        
-        #D7 {
-            background: url('chess-pieces.png')64px 0;
-            background-color: yellowgreen;
-        }
-        
-        #E7 {
-            background: url('chess-pieces.png')64px 0;
-            background-color: brown;
-        }
-        
-        #F7 {
-            background: url('chess-pieces.png')64px 0;
-            background-color: yellowgreen;
-        }
-        
-        #G7 {
-            background: url('chess-pieces.png')64px 0;
-            background-color: brown;
-        }
-        
-        #H7 {
-            background: url('chess-pieces.png')64px 0;
-            background-color: yellowgreen;
-        }
-        
-        #A8 {
-            background: url('chess-pieces.png')0 0;
-            background-color: yellowgreen;
-        }
-        
-        #B8 {
-            background: url('chess-pieces.png')192px 0;
-            background-color: brown;
-        }
-        
-        #C8 {
-            background: url('chess-pieces.png')160px 0;
-            background-color: yellowgreen;
-        }
-        
-        #D8 {
-            background: url('chess-pieces.png')128px 0;
-            background-color: brown;
-        }
-        
-        #E8 {
-            background: url('chess-pieces.png')96px 0;
-            background-color: yellowgreen;
-        }
-        
-        #F8 {
-            background: url('chess-pieces.png')160px 0;
-            background-color: brown;
-        }
-        
-        #G8 {
-            background: url('chess-pieces.png')192px 0;
-            background-color: yellowgreen;
-        }
-        
-        #H8 {
-            background: url('chess-pieces.png')0 0;
-            background-color: brown;
-        }
-    </style>
+    <title>Echiquier-manuel</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="css/bacAsable.css" rel="stylesheet" media="all" type="text/css">
+    <script type="application/javascript" src="js/bacAsable.js"></script>
 </head>
 
-<body>
+<body onload="miseEnPlacePieces()" ;>
     <div id="echiquier">
         <div class="line">
-            <div class="bordure"></div>
+            <div class="bordure" draggable="true"></div>
             <div class="bordure">A</div>
             <div class="bordure">B</div>
             <div class="bordure">C</div>
@@ -432,7 +98,7 @@
         <div class="line">
             <div class="bordure">2</div>
             <div id="A2"></div>
-            <div id="B2"></div>
+            <div id="B2" draggable="true"><a href="#"></a></div>
             <div id="C2"></div>
             <div id="D2"></div>
             <div id="E2"></div>
@@ -445,13 +111,13 @@
             <div class="bordure">1</div>
             <div id="A1"></div>
             <div id="B1"></div>
-            <div id="C1"></div>
+            <div id="C1" ></div>
             <div id="D1"></div>
             <div id="E1"></div>
             <div id="F1"></div>
             <div id="G1"></div>
             <div id="H1"></div>
-            <div class="bordure">2</div>
+            <div class="bordure">1</div>
         </div>
         <div class="line">
             <div class="bordure"></div>

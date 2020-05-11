@@ -1,0 +1,93 @@
+// Représentation de notre échiquier
+const echiquier = [
+  [' * ', ' A ', ' B ', ' C ', ' D ', ' E ', ' F ', ' G ', ' H ', ' * '],
+  [' 1 ', 'BT1', 'BC1', 'BF1', 'BD1', 'BR1', 'BF2', 'BC2', 'BT2', ' 1 '],
+  [' 2 ', 'BP1', 'BP2', 'BP3', 'BP4', 'BP5', 'BP6', 'BP7', 'BP8', ' 2 '],
+  [' 3 ', ' - ', ' - ', ' - ', ' - ', ' - ', ' - ', ' - ', ' - ', ' 3 '],
+  [' 4 ', ' - ', ' - ', ' - ', ' - ', ' - ', ' - ', ' - ', ' - ', ' 4 '],
+  [' 5 ', ' - ', ' - ', ' - ', ' - ', ' - ', ' - ', ' - ', ' - ', ' 5 '],
+  [' 6 ', ' - ', ' - ', ' - ', ' - ', ' - ', ' - ', ' - ', ' - ', ' 6 '],
+  [' 7 ', 'NP1', 'NP2', 'NP3', 'NP4', 'NP5', 'NP6', 'NP7', 'NP8', ' 7 '],
+  [' 8 ', 'NT1', 'NC1', 'NF1', 'ND1', 'NR1', 'NF2', 'NC2', 'NT2', ' 8 '],
+  [' * ', ' A ', ' B ', ' C ', ' D ', ' E ', ' F ', ' G ', ' H ', ' * ']
+]
+
+function validationMouvement(Y, X, nouveauY, nouveauX) {
+  // Vérifie si les coordonnées de départ ne sont PAS valides
+  if ( !(Y >= 1 && Y <= 8 && X >= 1 && X <= 8) ) {
+    return [false, `Les coordonnées de départ se trouvent en dehors de l'échiquier.`];
+  }
+
+  // Vérifie si la case de départ est vide
+  if (echiquier[Y][X][1] === '-') {
+    return [false, `Vous avez sélectionné une case vide.`];
+  }
+
+  // Récupére la couleur, le type et le numéro de la pièce à bouger
+  var couleur = echiquier[Y][X][0];
+  var type = echiquier[Y][X][1];
+  var numero = echiquier[Y][X][2];
+  
+  // Vérifie si les coordonnées d'arrivée ne sont PAS valides
+  if ( !(nouveauY >= 1 && nouveauY <= 8 && nouveauX >= 1 && nouveauX <= 8) ) {
+    return [false, `Les coordonnées d'arrivée se trouvent en dehors de l'échiquier.`];
+  }
+
+  // Récupére la couleur de la pièce à la position de destination (ou un espace ' ' si aucune pièce n'est présente à cet endroit)
+  var couleurCible = echiquier[nouveauY][nouveauX][0];
+
+  // Vérifie si la couleur de la case de destination est la même que celle de la pièce de départ
+  if (couleur === couleurCible) {
+    return [false, `Vous ne pouvez pas vous déplacez la même case qu'une pièce de votre équipe.`];
+  }
+}
+
+/*
+switch (verificationPiece(Y, X)) {
+  case 'P':
+    break;
+  case 'T':
+    break;
+  case 'C':
+    break;
+  case 'F':
+    break;
+  case 'D':
+    break;
+  case 'R':
+    break;
+  default:
+    break;
+}
+*/
+
+// La lettre que l'utilisateur va rentrer sera convertie en index à utiliser afin de trouver la case dans notre échiquier
+function convertisseur(lettre) {
+  const alphabet = [' ', 'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', ' '];
+
+  indexLettre = alphabet.indexOf(lettre);
+
+  // Vérifie que l'index soit une valeur valide pour se sélectionner une pièce ou se déplacer (Possible de s'en passer grâce à la vérification dans validationMouvement ?)
+  if (indexLettre >= 1 && indexLettre <= 8) {
+    return indexLettre;
+  }
+
+  console.log('Lettre non autorisée');
+}
+
+// Permet de déplacer une pièce vers une nouvelle position et de rendre la case de départ vide
+function deplacementPiece(Y, X, nouveauY, nouveauX) {
+  echiquier[nouveauY][nouveauX] = echiquier[Y][X];
+  echiquier[Y][X] = ' - ';
+  afficheEchiquier();
+}
+
+// Affiche l'échiquier
+function afficheEchiquier() {
+  // S'occupe de la première ligne d'affichage
+  console.log(' _   _'.repeat(10));
+  // S'occupe de toutes les autres lignes en concaténant chaque ligne/array de l'échiquier avec un séparateur précisé et entoure cette ligne de bords
+  for (let i = 0; i < echiquier.length; i++) {
+      console.log('|_' + echiquier[i].join("_|_") + '_|');
+  }
+}
