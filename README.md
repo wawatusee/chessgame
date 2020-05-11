@@ -18,9 +18,19 @@ creation d'un tableau figurant la position de chaque piece ok(tableau-echiquier-
 *todo* creer function changeDePiece pour remplir les cases ok (3 arguments, 1case de destination:String, figure :Number de 0 à 6, couleur : String(b ou n))
 
 *todo* appliquer les styles utilisés dans echiquier-manuel.html en js ok Utilisé pour changement de pièce dans la fonction changeDePiece(), propriété : ".style.backgroundPosition "
-A faire
 
+*todo* importer et parser le tablau de tableau-echiquier-andre.js pour alimenter les lignes et les cases ok fonction afficheEchiquierHtml() dans echiquier-manuel.js
+
+*accessoire* modif couleur damier dans bacasable.css
+
+modification
+A faire
 --------------------------------------------------------------------------------------------
-*todo* importer et parser le tablau de tableau-echiquier-andre.js pour alimenter les lignes et les cases
 
 *todo*(option) gestion du dom pour créer des lignes à la volée (Essai : ligne-echiquier-createelement.html)à généraliser pour toute la création du jeu
+
+*todo*Essai propriéte draggable sur les pieces avec envoi et réception de données avec le JS d'andré
+
+*todo*Classes case noire et blanche pour pouvoir changer d'habillage facilement
+
+*todo*sélecteur de sprite pour avoir des choix de figures différentes
