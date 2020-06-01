@@ -36,13 +36,33 @@ const  echiquier  =   [  
     [' 2 ',  'BP1',  'BP2',  'BP3',  'BP4',  'BP5',  'BP6',  'BP7',  'BP8',  ' 2 '],   
     [' 3 ',  ' - ',  ' - ',  ' - ',  ' - ',  ' - ',  ' - ',  ' - ',  ' - ',  ' 3 '],   
     [' 4 ',  ' - ',  ' - ',  ' - ',  ' - ',  ' - ',  ' - ',  ' - ',  ' - ',  ' 4 '],   
-    [' 5 ',  ' - ',  ' - ',  ' - ',  ' - ',  ' - ',  ' - ',  ' - ',  ' - ',  ' 5 '],   
-    [' 6 ',  ' - ',  ' - ',  ' - ',  'NP4',  ' - ',  ' - ',  ' - ',  ' - ',  ' 6 '],   
+    [' 5 ',  ' - ',  ' - ',  ' - ',  'NP4',  ' - ',  ' - ',  ' - ',  ' - ',  ' 5 '],   
+    [' 6 ',  ' - ',  ' - ',  ' - ', ' - ' ,  ' - ',  ' - ',  ' - ',  ' - ',  ' 6 '],   
     [' 7 ',  'NP1',  'NP2',  'NP3',  ' - ',  'NP5',  'NP6',  'NP7',  'NP8',  ' 7 '],   
     [' 8 ',  'NT1',  'NC1',  'NF1',  'ND1',  'NR1',  'NF2',  'NC2',  'NT2',  ' 8 '],   
     [' * ',  ' A ',  ' B ',  ' C ',  ' D ',  ' E ',  ' F ',  ' G ',  ' H ',  ' * ']
 ];
 //Intercation entre le tableau echiquier et l'affichage HTML
+function changeDePiece(place, figure, couleur) {
+    //Coordonnées en y pour l'image de fond rangées par couleur Blanc, Noir, ou vide
+    var aCouleur = ["-32px", "0px", "-64px"];
+    var couleurJouee = aCouleur[(couleur === "B" ? 0 : couleur === "N" ? 1 : 2)];
+    //Coordonnées en x pour l'image de fond selon la figure
+    var pieces = [
+        ["tour ", "0px"],
+        ["cavalier ", "192px"],
+        ["fou ", "160px"],
+        ["dame ", "128px"],
+        ["roi ", "96px"],
+        ["pion ", "64px"],
+        ["vide", "0px"],
+    ];
+    //Chope la piece dont on parle grace à la place
+    var emplacement = document.getElementById(place);
+    //Affiche la bonne figure selon la figure et la couleur
+    emplacement.style.backgroundPosition = `${pieces[figure][1]} ${couleurJouee}`;
+    /*alert(`${pieces[figure][0]} en ${place}`);*/
+} 
 function  afficheEchiquierHtml()  { 
     // Parse chaque case de notre constante echiquier et déplace l'image de fond de chaque case pour qu'elle corresponde à la pièce qui l'occupe(fonction changeDePiece())
     for  (let  i  =  1;  i  <  9;  i++)  { 
@@ -79,20 +99,3 @@ function  afficheEchiquierHtml()  { 
         }     
     }
 }
-
-function changeDePiece(place = "B3", figure, couleur) {
-    var aCouleur = ["-32px", "0px", "-64px"];
-    var couleurJouee = aCouleur[(couleur === "B" ? 0 : couleur === "N" ? 1 : 2)];
-    var pieces = [
-        ["tour ", "0px"],
-        ["cavalier ", "192px"],
-        ["fou ", "160px"],
-        ["dame ", "128px"],
-        ["roi ", "96px"],
-        ["pion ", "64px"],
-        ["vide", "0px"],
-    ];
-    var emplacement = document.getElementById(place);
-    emplacement.style.backgroundPosition = `${pieces[figure][1]} ${couleurJouee}`;
-    /*alert(`${pieces[figure][0]} en ${place}`);*/
-} 

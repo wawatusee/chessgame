@@ -1,5 +1,4 @@
 .ligne {
-    background-color: aqua;
     max-width: 260px;
 }
 
@@ -8,7 +7,6 @@
     float: left;
     height: 32px;
     width: 32px;
-	color:pink;
 }
 #A1 {
     background: url('../images/chess-pieces.png')0px -32px;
