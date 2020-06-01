@@ -1,15 +1,19 @@
-.ligne {
-    background-color: aqua;
-    max-width: 260px;
+#echiquier {
+    max-width: 320px;
 }
 
-.case {
-	position:relative;
+.line div {
     float: left;
     height: 32px;
     width: 32px;
-	color:pink;
 }
+
+.bordure {
+    text-align: center;
+    color: white;
+    background-color: black;
+}
+
 #A1 {
     background: url('../images/chess-pieces.png')0px -32px;
     background-color: rgb(49, 42, 42);

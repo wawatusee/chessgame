@@ -33,7 +33,7 @@ function changeDePiece(place = "B3", figure, couleur) {
 } 
 const  alphabet  =   [' ',  'A',  'B',  'C',  'D',  'E',  'F',  'G',  'H',  ' '];
 
-function  afficheEchiquierHtml()  {   // Parse chaque case de notre echiquier
+function  afficheEchiquierHtml()  {  // Parse chaque case de notre constante echiquier et déplace l'image de fond de chaque case pour qu'elle corresponde à la pièce qui l'occupe
     for  (let  i  =  1;  i  <  9;  i++)  { 
         for (let j = 1; j < 9; j++) {
             var ligne = i;
