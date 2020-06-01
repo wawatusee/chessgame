@@ -21,14 +21,16 @@ creation d'un tableau figurant la position de chaque piece ok(tableau-echiquier-
 
 * importer et parser le tablau de tableau-echiquier-andre.js pour alimenter les lignes et les cases ok fonction afficheEchiquierHtml() dans echiquier-manuel.js
 
-*accessoire* modif couleur damier dans bacasable.css
+*  modif couleur damier dans js avec modulo
 
 * gestion du dom pour créer des lignes à la volée (chessBoard-createelement.html, associé au js et css du même nom)
+
+* Associer l'affichage de l'échiquier au code de la classe. Fichier bacasable.html avec js et css du même nom. L'affichage est lié à la constante echiquier(tableau des cases) et peut être rafraichit grace à la fonction afficheEchiquierHtml()
 
 modification
 A faire
 --------------------------------------------------------------------------------------------
-* Associer chessBoard-createelement.html au code de la classe, avec appel de la fonction afficherEchiquier
+* Trouver façon plus élègante d'afficher les pièces au début(pour l'instant la fonction createChessbord appelle afficheEchiquierHtml())
 
 * todo*Essai propriéte draggable sur les pieces avec envoi et réception de données avec le JS d'andré
 
