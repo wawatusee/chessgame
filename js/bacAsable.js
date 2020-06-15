@@ -13,7 +13,7 @@ function createChessBoard() {
             // Création d'une div qui avec une classe case et un ID
             var newCase = document.createElement("DIV");
             newCase.className = "case";
-            //A SUPPRIMER : ajoute l'id en contenu à la case créée
+            //Ajoute l'id en contenu à la case créée
             newCase.id = alphabet[j] + i;
             //Une case sur 2 de couleur en se basant sur l'addition de i et j
             if ((i + j) % 2 < 1) {
@@ -21,8 +21,10 @@ function createChessBoard() {
             } else {
                 newCase.style.backgroundColor = "rgb(49, 42, 42)";
             }
+
             //Plaçons la case dans la ligne
             newline.appendChild(newCase);
+            newCase.addEventListener('click', onClique)
         }
         //La ligne créée est placée dans l'échiquier(div "plateau")
         chessBoard.appendChild(newline);
@@ -77,6 +79,10 @@ function  afficheEchiquierHtml()  {  // Parse chaque case de notre constante
             changeDePiece(place, piece, couleur);
         }     
     }
+}
+
+function onClique() {
+    alert(this.id);
 }
 
 function changeDePiece(place = "B3", figure, couleur) {
